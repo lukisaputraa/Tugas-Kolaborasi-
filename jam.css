@@ -1,0 +1,173 @@
+/* ========== JAM HDD - SAMPAHKU HARTAKU | TEMA DAUR ULANG E-WASTE ========== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root{
+  --green-dark:#0f3d2e;
+  --green:#16a34a;
+  --green-light:#dcfce7;
+  --lime:#a3e635;
+  --yellow:#facc15;
+  --dark:#0f172a;
+  --grey:#64748b;
+  --bg:#f6f7f2;
+  --card:#ffffff;
+  --border:#dbe7d3;
+  --radius:20px;
+  --shadow:0 10px 30px rgba(15,61,46,.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--bg);
+  color:var(--dark);
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block;object-fit:cover;border-radius:16px}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:sticky;top:0;z-index:99;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 5%;
+  background:rgba(15,61,46,.95);
+  backdrop-filter:blur(10px);
+  color:white;
+}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px}
+.navbar nav{display:flex;gap:20px}
+.navbar nav a{
+  font-size:14px;font-weight:700;
+  background:var(--lime);color:#0f3d2e;
+  padding:8px 18px;border-radius:100px;
+}
+.navbar nav a:hover{transform:translateY(-1px)}
+
+/* ===== MAIN LAYOUT ===== */
+main{max-width:900px;margin:auto;padding:36px 5% 70px}
+main > div{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+section{padding:32px 32px 28px}
+
+/* Judul */
+section > h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(26px,4vw,34px);
+  line-height:1.15;letter-spacing:-.8px;
+  color:var(--green-dark);
+  margin-bottom:22px;
+}
+section > h2::after{
+  content:"♻ E-Waste • Hard Disk Bekas";
+  display:block;margin-top:10px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:12px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--green);
+}
+
+/* ===== FOTO + ULASAN ===== */
+figure{margin-bottom:28px}
+figure img{
+  height:360px;
+  border:1px solid var(--border);
+}
+figcaption{
+  margin-top:18px;
+  background:#eef6ec;
+  border-left:6px solid var(--green);
+  border-radius:14px;
+  padding:18px 20px;
+}
+figcaption p{font-size:15px;color:#334155}
+figcaption p::first-line{font-weight:800;color:var(--green-dark)}
+
+/* ===== LIST UTAMA A, B, C ===== */
+section > ol[type="A"],
+section > ol{
+  list-style:none;
+  counter-reset:item;
+  display:flex;flex-direction:column;gap:18px;
+}
+section > ol > li{
+  background:#f8fafc;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:20px 22px;
+  font-weight:800;font-size:17px;color:var(--green-dark);
+}
+
+/* List dalam */
+section > ol > li ul,
+section > ol > li ol{
+  margin-top:14px;
+  font-weight:400;font-size:15px;color:#334155;
+}
+section > ol > li ul{list-style:none}
+section > ol > li ul > li{
+  background:white;border:1px dashed #cbd5e1;
+  border-radius:12px;padding:14px 16px;margin-bottom:12px;
+  font-weight:700;color:var(--dark);
+}
+section > ol > li ul > li ol{
+  margin-top:10px;padding-left:18px;
+  list-style:decimal;
+}
+section > ol > li ul > li ol li{
+  margin-bottom:6px;font-weight:400;
+}
+
+/* Langkah Kerja */
+section > ol > li > ol[type="2"]{
+  list-style:decimal;padding-left:20px;margin-top:12px;
+}
+section > ol > li > ol[type="2"] > li{
+  margin-bottom:10px;font-weight:400;font-size:15px;
+}
+section > ol > li > ol[type="2"] > li ol{
+  list-style:lower-alpha;padding-left:18px;margin-top:8px;
+}
+section > ol > li > ol[type="2"] > li ol li{
+  margin-bottom:6px;
+}
+
+/* Estimasi Biaya */
+section > ol > li > ol[type="3"]{
+  list-style:none;
+}
+section > ol > li > ol[type="3"] > ol{
+  background:var(--green-dark);color:white;
+  border-radius:14px;padding:16px 18px;margin-bottom:12px;
+  font-weight:700;
+}
+section > ol > li > ol[type="3"] > ol li{
+  font-weight:400;color:#e2e8f0;margin-top:6px;list-style:none;
+}
+section > ol > li > ol[type="3"] > ol li::before{
+  content:"• ";color:var(--lime);
+}
+
+/* Total / Harga / Laba - yang di luar ol, di HTML kamu */
+section > ul > li,
+section > li{
+  list-style:none;
+}
+
+/* Biar Total, Harga, Laba keliatan kayak badge */
+section > ol + li,
+section > ul li{
+  font-weight:800;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:640px){
+  section{padding:22px 18px}
+  figure img{height:230px}
+  .navbar{padding:12px 4%}
+}
